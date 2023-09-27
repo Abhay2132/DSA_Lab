@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 		
 		
 	} while(ch != 9);
-	printf("BYE BYE");
+	printf("BYE BYE \n");
 		return 0;
 }
 
