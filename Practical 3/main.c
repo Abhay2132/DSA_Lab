@@ -3,18 +3,21 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int * matrix1, *matrix2, row1=0, col1=0, row2=0, col2=0;
+int * matrix1 , *matrix2, row1=0, col1=0, row2=0, col2=0;
 
 void create();
 void add();
 void mulitply();
 void transpose();
 void isSparse(int matrixN);
+
 int get(int * , int , int , int);
 void set(int * , int , int , int , int );
-
+void printMatrix(int *, int , int );
 
 int main(int argc, char *argv[]) {
+	matrix1 = (int *) malloc(sizeof(int));
+	matrix2 = (int *) malloc(sizeof(int));
 	
 	int ch=9;
 	do{
@@ -72,14 +75,34 @@ void set(int * matrix, int row, int col , int rowSize, int value){
 void create(){
 	printf("\n Matrix1 :- \n");
 	printf(" row and column size : ");
-	scanf("%d %d", &row1, &col1);
 
-	matrix1 = (int *) malloc(sizeof(int)*(row1*col1));
+	scanf("%d %d", &row1, &col1);
+	matrix1 = (int *) realloc(matrix1, sizeof(int)*(row1*col1));
+
+	printf("\n Fill the Matrix1");
 	for(int i=0; i<row1; i++){
-		for(int j=0; j< col1; j++){\
+		printf("\n ROW[%d] : ", i+1);
+		for(int j=0; j< col1; j++){
 			int value;
-			scanf("%d", value);
+			scanf("%d", &value);
 			set(matrix1, i,j, row1, value);
+		}
+	}
+
+	
+	printf("\n\n Matrix2 :- \n");
+	printf(" row and column size : ");
+
+	scanf("%d %d", &row2, &col2);
+	matrix2 = (int *) realloc(matrix2, sizeof(int)*(row2*col2));
+
+	printf("\n Fill the Matrix2");
+	for(int i=0; i<row2; i++){
+		printf("\n ROW[%d] : ", i+1);
+		for(int j=0; j< col2; j++){
+			int value;
+			scanf("%d", &value);
+			set(matrix2, i,j, row2, value);
 		}
 	}
 
