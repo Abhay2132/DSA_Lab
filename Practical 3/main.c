@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
 	
 	int ch=9;
 	do{
-		printf("\t\t Matrix Man \n");
+		printf("\t\t Matrix OPs \n");
 		printf("Choose an option :- \n\n");
 		
 		printf(" 1.) Create Matrices\n");
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 		printf(" 9.) EXIT\n");
 		printf(" >> ");
 		
-		scanf(ch);
+		scanf("%d", &ch);
 		
 		switch(ch){
 			case 1 : create(); break;
@@ -40,12 +40,12 @@ int main(int argc, char *argv[]) {
 		
 		
 	} while(ch != 9);
-	
-	return 0;
+	printf("BYE BYE");
+		return 0;
 }
 
 void create(){
 	printf("\n Matrix1 :- \n");
 	printf(" row : ");
-	scanf("%d")
+	scanf("%d", &row1);
 }
