@@ -1,48 +1,21 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "helper.h"
+#include "models.h"
 
-struct data {
-    char name[20];
-    int usn;
-    char branch[10];
-    int sem;
-    long int phNo;
-};
 
-struct node {
-    struct data * data;
-    struct node * link;
-};
 
-void printHeader();
-void printRow(struct data *);
-void printRecords(struct node *, int limit);
+int main()
+{
 
-struct node * insert_end(struct data *);
-struct node * insert_start(struct data *);
-struct node * insert_at(struct data *);
-
-struct node * delete_start();
-struct node * delete_end();
-struct node * delete_at(int pos);
-
-struct node * udpate_at(int pos, struct data *);
-struct node * node_at(int pos);
-struct node * data_at(int pos);
-
-struct node * append(struct node *, struct node *);
-
-void printRecord(int n);
-
-int main(){
-
-    struct node * start;
-    int ch=1;
-    while(ch){
+    struct node *start;
+    int ch = 1;
+    while (ch)
+    {
         clrscr();
         printf("========= Linked List ==========\n\n");
 
-        printHeader(); printf("\n");
+        printHeader();
+        printf("\n");
         printRecords(start, 10);
         printf("Choose an option :- \n");
         printf(" 1.) Create Records at end\n");
@@ -60,44 +33,66 @@ int main(){
 
         switch (ch)
         {
-        case 1 : start = insert_end(); break;
-        case 2 : start = insert_start(); break;
-        case 3 : start = insert_at(); break;
-        case 4 : start = delete_start(); break;
-        case 5 : start = delete_end(); break;
-        case 6 : start = delete_at(); break;
-        case 7 : start = udpate_at(); break;
-        case 8 : start = udpate_at(); break;
-    }
+        case 1:
+            start = insert_end(start);
+            break;
+        case 2:
+            start = insert_start(start);
+            break;
+        case 3:
+            start = insert_at(start);
+            break;
+        case 4:
+            start = delete_start(start);
+            break;
+        case 5:
+            start = delete_end(start);
+            break;
+        case 6:
+            start = delete_at(start);
+            break;
+        case 7:
+            start = udpate_at(start);
+            break;
+        case 8:
+            start = udpate_at(start);
+            break;
+        }
 
-    return 0;
+        return 0;
+    }
 }
 
-void printHeader (){
+void printHeader()
+{
     printf(" USN\t\tname\t\tbranch\t\tsem\t\tPhone");
 }
 
-void printRow(struct data *){
+void printRow(struct data *)
+{
 
     printf(" %d", data->usn);
-    s(8-numLen(data->usn));
+    s(8 - numLen(data->usn));
     printf("%s", data->name);
-    s(8-strLen(data->name));
+    s(8 - strLen(data->name));
     printf("%s", data->branch);
-    s(8-strLen(data->branch));
+    s(8 - strLen(data->branch));
     printf("%d", sem);
-    s(8-strLen(data->sem));
+    s(8 - strLen(data->sem));
     printf("%d", data->phNo);
 
     printf("")
 }
 
-void printRecords(struct node * start, int limit){
-    int count =0;
-    struct node * tmp = start;
+void printRecords(struct node *start, int limit)
+{
+    int count = 0;
+    struct node *tmp = start;
 
-    while(tmp->link != NULL){
-        if(count ++ >= limit){ 
+    while (tmp->link != NULL)
+    {
+        if (count++ >= limit)
+        {
             printf("\n . . .");
             break;
         }
@@ -105,6 +100,19 @@ void printRecords(struct node * start, int limit){
         printf("\n");
         tmp = tmp->link;
 
-        count ++;
+        count++;
     }
 }
+
+struct node *insert_end(struct node * start){
+    struct data * newData;
+    struct node * tmp = start;
+
+    printf("\n\t\t Insert at End\n");
+    printf("\n ")
+
+    if(start == NULL)
+    while()
+}
+
+// Do not type after this line
