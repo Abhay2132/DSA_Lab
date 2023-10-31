@@ -1,4 +1,5 @@
 #include<stdlib.h>
+#include<stdio.h>
 
 void clrscr(){
     system("clear");
@@ -32,4 +33,18 @@ void printArr(int * arr, int size){
         if(i != size -1 ) printf(",");
     }
     printf("]");
+}
+
+int parseInt (char c){
+    int i = (int) c;
+    return i - 48;
+}
+
+int readInt (){
+    char c;
+    scanf("%c", &c);
+    return parseInt(c);
+}
+void wait(){
+    system("sleep 0.05");
 }
