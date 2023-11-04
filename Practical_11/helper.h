@@ -40,10 +40,11 @@ int parseInt (char c){
     return i - 48;
 }
 
-int readInt (){
-    char c;
-    scanf("%c", &c);
-    return parseInt(c);
+int readInt(){
+   char str[10];
+   scanf("%s", str);
+   int num = atoi(str);
+   return num; 
 }
 void wait(){
     system("sleep 0.05");

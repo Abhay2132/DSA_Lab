@@ -5,8 +5,8 @@
 #include "algo.h"
 
 int *create(int *arr, int *size);
-void linear(int *arr, int size);
-
+void linearSearch(int *arr, int size);
+// void binary
 int main()
 {   
     int *arr = (int *)malloc(sizeof(int));
@@ -41,7 +41,7 @@ int main()
             arr = create(arr, &size);
             break;
         case 2:
-            linear(arr, size);
+            linearSearch(arr, size);
             break;
             // case 3: size = create(arr); break;
             // case 4: size = create(arr); break;
@@ -65,13 +65,12 @@ int *create(int *arr, int *size)
         int a;
         scanf("%d", &a);
         *(arr + i) = a;
-        // printf("%d\n", *(arr + i));
     }
 
     return arr;
 }
 
-void linear(int *arr, int size)
+void linearSearch(int *arr, int size)
 {
     clrscr();
     clock_t start, end; 
@@ -105,6 +104,10 @@ void linear(int *arr, int size)
     scanf("%d", &ch);
 
     if (ch != 2)
-        linear(arr, size);
+        linearSearch(arr, size);
 }
 
+// void binarySearch(int * arr, int size){
+//     int val;
+//     char    
+// }
